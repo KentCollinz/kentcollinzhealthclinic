@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- BASIC SEO -->
+<meta name="description" content="KentCollinz Health Clinic – Modern, reliable, and compassionate healthcare in Uganda. We offer General Medicine, Pediatrics, Laboratory Diagnostics, Vaccinations, and more. Your health is our priority.">
+<meta name="keywords" content="clinic, health clinic, medical clinic, healthcare, kentcollinz clinic, doctor, hospital, medical services, uganda clinic, clinics near me">
+<meta name="author" content="KentCollinz Health Clinic">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- LOCAL SEO -->
+<meta name="geo.region" content="UG-C">
+<meta name="geo.placename" content="Luweero, Uganda">
+<meta name="geo.position" content="0.8414;32.4959">
+<meta name="ICBM" content="0.8414, 32.4959">
+
+<!-- SOCIAL MEDIA LINK PREVIEWS -->
+<meta property="og:title" content="KentCollinz Health Clinic">
+<meta property="og:description" content="Your health is our priority. Visit KentCollinz Health Clinic for professional and compassionate medical care.">
+<meta property="og:image" content="clinic.jpg"> 
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kentcollinz.github.io/kentcollinzhealthclinic">
+
+<!-- WHATSAPP (ONLY SOCIAL MEDIA I HAVE) -->
+    <meta property="og:see_also" content="https://wa.me/256755726429">
+
+    <!-- JSON-LD: MEDICAL CLINIC STRUCTURED DATA (UPDATED) -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"MedicalClinic",
+      "name":"KentCollinz Health Clinic",
+      "image":"https://kentcollinz.github.io/kentcollinzhealthclinic/clinic.jpg",
+      "description":"KentCollinz Health Clinic provides general consultations, pediatrics, laboratory diagnostics, vaccinations, and primary healthcare services in Luweero.",
+      "url":"https://kentcollinz.github.io/kentcollinzhealthclinic",
+      "telephone":"+256755726429",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Kasana Town Council",
+        "addressLocality":"Luweero",
+        "addressRegion":"Central Region",
+        "addressCountry":"UG"
+      },
+      "geo":{
+        "@type":"GeoCoordinates",
+        "latitude":0.8414,
+        "longitude":32.4959
+      },
+      "openingHours":[
+        "Mo 08:00-18:00",
+        "Tu 08:00-18:00",
+        "We 08:00-18:00",
+        "Th 08:00-18:00",
+        "Fr 08:00-18:00",
+        "Sa 09:00-15:00"
+      ],
+      "medicalSpecialty":[
+        "GeneralPractice",
+        "Pediatrics",
+        "LaboratoryMedicine",
+        "PrimaryCare"
+      ],
+      "priceRange":"UGX",
+      "sameAs":[
+        "https://wa.me/256755726429"
+      ]
+    }
+    </script>
+
+    <title>Contact Us | KentCollinz Health Clinic</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <div class="logo-icon">KC</div>
+        <div class="logo-text">
+            <h1>KentCollinz Health Clinic</h1>
+            <p>Your Health, Our Priority</p>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact-section">
+
+    <h2 class="cnt">Contact Us</h2>
+
+    <div class="contact-info">
+
+        <p>
+            <strong>Phone:</strong>
+            <a href="tel:+256755726429" class="phone">+256 755 726429</a>
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:kentcollinzclinic@gmail.com">info@kentcollinzclinic.com</a>
+        </p>
+
+        <a 
+            href="https://wa.me/256755726429?text=Hello%20Dr.Kent%20Health%20Clinic,%20I%20would%20like%20to%20book%20an%20appointment." 
+            target="_blank" 
+            class="whatsapp-btn">
+            Chat on WhatsApp
+        </a>
+
+    </div>
+
+    <div class="contact-card">
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mblnklon" method="POST">
+            
+            <input type="text" name="name" placeholder="Your Name" required>
+
+            <input type="email" name="email" id="emailField" placeholder="Your Email" required>
+
+            <textarea name="message" placeholder="Your Message" required></textarea>
+
+            <!-- Button with spinner -->
+            <button type="submit" id="submitBtn">
+                <span class="btn-text">Send Message</span>
+                <span class="spinner"></span>
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>&copy; <span id="year"></span> KentCollinz Health Clinic. All Rights Reserved</p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms & Conditions</a>
+</footer>
+
+<!-- Slide-in Notification Box -->
+<div id="notifyBox" class="notify">
+    <i class="fa-solid fa-circle-check" id="notifyIcon"></i>
+    <span id="notifyMessage">Notification</span>
+    <span id="notifyClose" class="notify-close">×</span>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submitBtn");
+
+    const btnText = submitBtn.querySelector(".btn-text");
+    const spinner = submitBtn.querySelector(".spinner");
+
+    const notifyBox = document.getElementById("notifyBox");
+    const notifyMessage = document.getElementById("notifyMessage");
+    const notifyIcon = document.getElementById("notifyIcon");
+    const notifyClose = document.getElementById("notifyClose");
+
+    function showNotification(message, type = "success") {
+        notifyMessage.textContent = message;
+
+        notifyBox.className = "notify " + type;
+
+        notifyIcon.className =
+            type === "success"
+                ? "fa-solid fa-circle-check"
+                : "fa-solid fa-circle-xmark";
+
+        void notifyBox.offsetWidth; // restart animation
+        notifyBox.classList.add("show");
+
+        setTimeout(() => notifyBox.classList.remove("show"), 4000);
+    }
+
+    notifyClose.onclick = () => notifyBox.classList.remove("show");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        btnText.style.display = "none";
+        spinner.style.display = "inline-block";
+        submitBtn.classList.add("loading");
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch("https://formspree.io/f/mblnklon", {
+                method: "POST",
+                body: formData,
+                headers: { Accept: "application/json" }
+            });
+
+            if (response.ok) {
+    showNotification("Thank you for contacting KentCollinz Clinic. We will reply you soon.", "success");
+    form.reset();
+} else {
+    showNotification("Failed to send message. Try again.", "error");
+}
+
+
+        } catch (error) {
+            showNotification("Network error. Check your connection.", "error");
+        }
+
+        spinner.style.display = "none";
+        btnText.style.display = "inline";
+        submitBtn.classList.remove("loading");
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("year").textContent = new Date().getFullYear();
+});
+
+</script>
+
+</body>
+</html>
+
+
